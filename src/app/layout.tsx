@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={manrope.className}>
-      <body className="antialiased">
+      <body className="antialiased bg-primary">
         <NavBar />
         {children}
       </body>

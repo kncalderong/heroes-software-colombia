@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function NavBar() {
   return (
     <nav className="bg-primary text-primary-foreground">
-      <div className="container border-b border-gray-500 justify-between flex px-4 items-center min-h-[90px] ">
+      <div className="container border-b border-gray-500 justify-between flex px-4 items-center min-h-[90px] mx-auto ">
         <MobileSidebar>
           <NavLinks />
         </MobileSidebar>
@@ -27,7 +27,14 @@ export default function NavBar() {
         <div className="hidden lg:flex">
           <NavLinks />
         </div>
-        <div></div>
+        <div className="hidden lg:block relative w-[145px] h-[25px]">
+          <Image
+            alt="next-logo"
+            src={"/vercel.svg"}
+            fill
+            style={{ objectFit: "contain" }}
+          />
+        </div>
       </div>
     </nav>
   );
