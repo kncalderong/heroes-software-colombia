@@ -1,9 +1,15 @@
+import Hero from "@/components/feed/Hero";
 import { ParallelModal } from "@/components/global/ParallelModal";
 
-export default function HeroPageModal() {
+export default async function HeroPageModal({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
   return (
     <ParallelModal>
-      <div>hero modal</div>
+      <Hero heroId={id} />
     </ParallelModal>
   );
 }

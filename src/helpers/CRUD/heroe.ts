@@ -1,6 +1,6 @@
 "use server";
 
-import { HeroesResponse } from "@/types/heroe";
+import { Heroe, HeroesResponse } from "@/types/heroe";
 
 export async function getHeroesTotalPages(pageSize: number) {
   try {
@@ -29,5 +29,20 @@ export async function getHeroes(pageSize: number, page: number) {
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch heroes");
+  }
+}
+
+export async function getHeroById(id: string) {
+  try {
+    const targetUrl = `https://ea1w717ym2.execute-api.us-east-1.amazonaws.com/api/hero?id=${id}`;
+    const response = await fetch(targetUrl);
+    if (!response.ok) {
+      throw new Error("Failed to fetch hero");
+    }
+    const data: Heroe = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch hero");
   }
 }

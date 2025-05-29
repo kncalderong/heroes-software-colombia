@@ -52,7 +52,7 @@ export interface Heroe {
   connections: HeroeConnections;
   id: number;
   name: string;
-  powerStats: HeroeStats;
+  powerstats: HeroeStats;
 }
 
 export interface HeroesResponse {
