@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function Slider({ heroes }: { heroes: Heroe[] }) {
   return (
-    <section className="flex w-[600px] h-[430px]">
+    <section className="flex w-[800px] h-[600px]">
       {heroes.map((hero) => (
         <div
-          className="w-0 grow object-cover opacity-80 duration-500 ease-in-out hover:cursor-pointer hover:w-[300px] hover:opacity-100 contrast-125 bg-gray-500"
+          className="w-0 grow object-cover opacity-80 duration-500 ease-in-out hover:cursor-pointer hover:w-[400px] hover:opacity-100 contrast-125 "
           key={hero.id}
         >
           <Image
@@ -17,6 +17,19 @@ export default function Slider({ heroes }: { heroes: Heroe[] }) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
+      ))}
+    </section>
+  );
+}
+
+export function SliderSkeleton() {
+  return (
+    <section className="flex w-[800px] h-[600px] rounded-xl overflow-hidden">
+      {Array.from({ length: 6 }).map((_, index: number) => (
+        <div
+          className="w-0 grow object-cover hover:w-[400px]  animate-pulse bg-gray-800"
+          key={index}
+        ></div>
       ))}
     </section>
   );

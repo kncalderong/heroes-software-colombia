@@ -30,7 +30,7 @@ export default function PaginationBlock({
   const allPages = generatePagination(currentPage, totalPages);
 
   return (
-    <Pagination>
+    <Pagination className="lg:mt-12">
       <PaginationContent>
         <PaginationItem>
           <PaginationPrevious
@@ -39,7 +39,7 @@ export default function PaginationBlock({
             tabIndex={currentPage <= 1 ? -1 : undefined}
             className={cn(
               currentPage <= 1 ? "pointer-events-none opacity-50" : undefined,
-              "bg-orange-light hover:bg-orange-dark tracking-widest"
+              "text-orange-dark font-bold tracking-widest uppercase hover:bg-transparent hover:text-orange-light"
             )}
           />
         </PaginationItem>
@@ -52,7 +52,10 @@ export default function PaginationBlock({
                 <PaginationLink
                   href={createPageURL(page)}
                   isActive={page === currentPage}
-                  className={cn(page !== currentPage && "text-gray-light")}
+                  className={cn(
+                    page !== currentPage && "text-orange-dark",
+                    "font-bold"
+                  )}
                 >
                   {page}
                 </PaginationLink>
@@ -69,7 +72,7 @@ export default function PaginationBlock({
               currentPage >= totalPages
                 ? "pointer-events-none opacity-50"
                 : undefined,
-              "bg-orange-light hover:bg-orange-dark tracking-widest"
+              "text-orange-dark font-bold tracking-widest uppercase hover:bg-transparent hover:text-orange-light"
             )}
           />
         </PaginationItem>

@@ -15,7 +15,7 @@ export default function NavLink(
       className={cn(
         "hover:text-orange-dark lg:p-4 uppercase text-sm tracking-widest",
         pathname === props.href &&
-          "text-orange-dark text-gray-strong lg:text-primary-foreground"
+          " text-gray-strong lg:text-primary-foreground"
       )}
     />
   );

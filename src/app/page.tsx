@@ -1,4 +1,4 @@
-import HeroesGrid from "@/components/feed/HeroesGrid";
+import HeroesGrid, { HeroesGridSkeleton } from "@/components/feed/HeroesGrid";
 import PaginationBlock from "@/components/global/PaginationBlock";
 import { getHeroesTotalPages } from "@/helpers/CRUD/heroe";
 import { Suspense } from "react";
@@ -15,12 +15,10 @@ export default async function Home(props: {
 
   return (
     <main className="w-full space-y-4 md:space-y-6 lg:space-y-8 mt-4 md:mt-6 lg:mt-8">
-      <Suspense key={currentPage + PAGE_SIZE} fallback={<div>Loading...</div>}>
+      <Suspense key={currentPage + PAGE_SIZE} fallback={<HeroesGridSkeleton />}>
         <HeroesGrid currentPage={currentPage} pageSize={PAGE_SIZE} />
       </Suspense>
-      <div>
-        <PaginationBlock totalPages={totalPages} />
-      </div>
+      <PaginationBlock totalPages={totalPages} />
     </main>
   );
 }
