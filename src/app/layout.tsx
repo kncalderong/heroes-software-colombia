@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/navigation/NavBar";
-
-const manrope = Manrope({
-  weight: "400",
-  subsets: ["latin"],
-});
+import { manrope } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Heroes Software Colombia",
