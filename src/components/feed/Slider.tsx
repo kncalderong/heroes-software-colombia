@@ -1,13 +1,16 @@
 import { Heroe } from "@/types/heroe";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Slider({ heroes }: { heroes: Heroe[] }) {
   return (
     <section className="flex w-[800px] h-[600px]">
       {heroes.map((hero) => (
-        <div
+        <Link
+          href={`hero/${hero.id}`}
           className="w-0 grow object-cover opacity-80 duration-500 ease-in-out hover:cursor-pointer hover:w-[400px] hover:opacity-100 contrast-125 "
           key={hero.id}
+          scroll={false}
         >
           <Image
             src={hero.images.lg}
@@ -16,7 +19,7 @@ export default function Slider({ heroes }: { heroes: Heroe[] }) {
             className="object-cover"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-        </div>
+        </Link>
       ))}
     </section>
   );
