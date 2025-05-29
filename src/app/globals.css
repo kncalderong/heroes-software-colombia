@@ -120,3 +120,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+@theme {
+  --color-orange-dark: hsl(22, 65%, 57%);
+  --color-orange-light: hsl(21, 94%, 75%);
+  --color-gray-strong: #hsl(0, 0%, 6%);
+  --color-gray-mid: hsl(0, 0%, 95%);
+  --color-gray-light: hsl(0, 0%, 98%);
+}
