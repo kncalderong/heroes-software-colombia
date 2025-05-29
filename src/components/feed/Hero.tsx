@@ -12,7 +12,7 @@ export default async function Hero({ heroId }: { heroId: string }) {
   return (
     <section className="flex flex-col gap-4 text-gray-300 lg:flex-row">
       <div className="w-full lg:w-1/2 flex-col flex gap-4">
-        <div className="w-full aspect-9/10 block relative lg:w-[450px] lg:h-[600px]">
+        <div className="w-full sm:w-3/4 mx-auto aspect-9/10 block relative lg:w-[450px] lg:h-[600px]">
           <Image
             src={heroData.images.lg}
             alt={heroData.name || ""}

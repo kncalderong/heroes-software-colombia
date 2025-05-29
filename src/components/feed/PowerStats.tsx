@@ -36,16 +36,22 @@ export default function PowerStats({ powerStats }: { powerStats: HeroeStats }) {
     <div className="w-full space-y-4">
       <p className="font-bold text-lg underline">Power Stats</p>
       <div className="flex">
-        <div className="w-1/4 flex flex-col gap-2">
+        <div className="hidden lg:w-1/4 lg:flex flex-col gap-2">
           {Object.entries(stats).map(([key, value]) => (
             <p key={key} className="capitalize font-medium text-sm">
               {key}: <span className="text-white">{value}</span>
             </p>
           ))}
         </div>
-        <div className="w-3/4 flex flex-col gap-2">
+        <div className="w-full lg:w-3/4 flex flex-col gap-2">
           {Object.entries(stats).map(([key, value]) => (
-            <div key={key} className="h-[20px] flex items-center">
+            <div
+              key={key}
+              className="h-auto lg:h-[20px] flex flex-col lg:items-center"
+            >
+              <p className="lg:hidden capitalize font-medium text-sm">
+                {key}: {value}
+              </p>
               <Progress value={value} className="h-3" />
             </div>
           ))}

@@ -24,7 +24,7 @@ export function ParallelModal({ children }: { children: React.ReactNode }) {
       <dialog
         open
         ref={dialogRef}
-        className="w-4/5 max-w-[1024px] h-auto border-none rounded-lg bg-gray-900 p-4 md:p-6 relative space-y-4 md:space-y-6 "
+        className="w-4/5 max-w-[1024px] h-auto max-h-10/12 border-none rounded-lg bg-gray-900 p-4 md:p-6 relative space-y-4 md:space-y-6 overflow-auto "
         onClose={onDismiss}
       >
         <div className="flex w-full justify-end">

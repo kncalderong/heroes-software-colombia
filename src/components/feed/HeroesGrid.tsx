@@ -2,6 +2,8 @@ import { getHeroes } from "@/helpers/CRUD/heroe";
 import Slider, { SliderSkeleton } from "./Slider";
 import { vt323 } from "@/app/fonts";
 
+import MobileCarousel from "./MobileCarousel";
+
 export default async function HeroesGrid({
   currentPage,
   pageSize,
@@ -16,6 +18,7 @@ export default async function HeroesGrid({
         Choose a Hero
       </h1>
       <Slider heroes={heroes} />
+      <MobileCarousel heroes={heroes} />
     </div>
   );
 }

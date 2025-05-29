@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Slider({ heroes }: { heroes: Heroe[] }) {
   return (
-    <section className="flex w-[800px] h-[600px]">
+    <section className="hidden lg:flex w-[800px] h-[600px]">
       {heroes.map((hero) => (
         <Link
           href={`hero/${hero.id}`}
