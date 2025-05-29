@@ -15,10 +15,10 @@ export default function NavBar() {
           href="/"
           className="flex justify-center items-center md:justify-start md:pl-10 lg:pl-0 grow lg:grow-0"
         >
-          <div className="relative w-[145px] h-[25px]">
+          <div className="relative w-[145px] h-[65px]">
             <Image
               alt="next-logo"
-              src={"/next.svg"}
+              src={"/marvel-comics.svg"}
               fill
               style={{ objectFit: "contain" }}
             />
